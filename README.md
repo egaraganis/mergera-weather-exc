@@ -40,6 +40,18 @@ I used [aiven](https://aiven.io/) MySQL instance provider to set up a MySQL inst
 
 `mysql --user <username> --password=<password> --host mysql-3be5b9fe-mergera-test.b.aivencloud.com --port 21952`
 
+If you wanna set up a custom SQL instance, just make sure that there's a present table:
+
+```sql
+CREATE TABLE WEATHER_DATA (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    temperature FLOAT,
+    recorded_date VARCHAR(30),
+    recorded_time VARCHAR(30)
+);
+```
+
 ## Relevant key decisions I made 
 
 Given the 2-day margin I had for the task completion, I favored a horizontal implementation that would include and integrate various services and libraries so that I could showcase my skillset.
