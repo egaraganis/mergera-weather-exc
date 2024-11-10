@@ -19,6 +19,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import countries from "@/lib/countries";
 import { useState } from "react";
 
 function FilterMetrics() {
@@ -70,7 +71,7 @@ function FilterMetrics() {
                 {filteredMetrics.map((row) => (
                   <TableRow key={row.name}>
                     <TableCell className="font-medium">
-                      {row.name}
+                      {countries.find(c => c.value === row.name).label}
                     </TableCell>
                     <TableCell>{row.avg_temp}</TableCell>
                   </TableRow>
