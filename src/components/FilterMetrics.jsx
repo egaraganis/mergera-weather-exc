@@ -32,7 +32,7 @@ function FilterMetrics() {
 
     try {
       setIsLoading(true);
-      const response = await fetch(`http://localhost:3000/api/forecasts/avg?n=${numLocations}`, {method: "GET"});
+      const response = await fetch(`http://${process.env.NEXT_PUBLIC_BACKEND_URL}/api/forecasts/avg?n=${numLocations}`, {method: "GET"});
 
       const result = await response.json();
       setFilteredMetrics(result);

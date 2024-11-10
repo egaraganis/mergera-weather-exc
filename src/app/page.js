@@ -12,7 +12,7 @@ export default function Home() {
    const handleSubmit = async (data) => {
       try {
          setIsLoading(true);
-         const response = await fetch("http://localhost:3000/api/forecasts", {
+         const response = await fetch(`http://${process.env.NEXT_PUBLIC_BACKEND_URL}/api/forecasts`, {
             method: "POST",
             headers: {
                "Content-Type": "application/json",
