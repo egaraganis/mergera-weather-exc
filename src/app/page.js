@@ -12,13 +12,16 @@ export default function Home() {
    const handleSubmit = async (data) => {
       try {
          setIsLoading(true);
-         const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/forecasts`, {
-            method: "POST",
-            headers: {
-               "Content-Type": "application/json",
-            },
-            body: data,
-         });
+         const response = await fetch(
+            `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/forecasts`,
+            {
+               method: "POST",
+               headers: {
+                  "Content-Type": "application/json",
+               },
+               body: data,
+            }
+         );
 
          const result = await response.json();
 
@@ -36,7 +39,7 @@ export default function Home() {
       >
          <main className="flex flex-col gap-10 items-center w-full min-h-screen">
             <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-4xl">
-               Mergera Data & React Engineer Excercise
+               Margera Data & React Engineer Excercise
             </h1>
 
             <SelectCountriesForm handleSubmit={handleSubmit} />
@@ -58,6 +61,7 @@ export default function Home() {
                </>
             )}
             <FilterMetrics />
+            <footer>Coded by <a href="https://egaraganis.dev/" target="_blank"><b>egaraganis</b></a></footer>
          </main>
       </div>
    );
